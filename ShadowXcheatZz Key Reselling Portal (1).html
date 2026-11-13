@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ShadowXcheatZz | Key Reselling Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== EDIT HERE: colors ===== */
+:root{
+  --bg:#05060a;
+  --text:#f4f6fb;
+  --mut:#8b93a7;
+  --accent:#e8ecf4;
+  --accent2:#8f9bb5;
+  --panel:rgba(255,255,255,.055);
+  --line:rgba(255,255,255,.12);
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:'Space Grotesk',system-ui,sans-serif;color:var(--text);background:var(--bg);overflow-x:hidden}
+#bg{position:fixed;inset:-30px;background:center/cover no-repeat;filter:blur(14px) brightness(.4);z-index:-3}
+.aurora{position:fixed;inset:-25%;z-index:-2;background:conic-gradient(from 0deg,transparent,var(--accent2),transparent 35%,var(--accent),transparent 70%,var(--accent2),transparent);filter:blur(90px);opacity:.16;animation:spin 46s linear infinite;pointer-events:none}
+.orbs{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.orbs i{position:absolute;width:46vmax;height:46vmax;border-radius:50%;background:radial-gradient(circle,var(--accent2),transparent 65%);opacity:.2;filter:blur(40px);animation:drift 18s ease-in-out infinite}
+.orbs i:nth-child(2){left:55%;top:40%;animation-duration:24s;animation-delay:-6s;background:radial-gradient(circle,var(--accent),transparent 65%)}
+.orbs i:nth-child(3){left:-10%;top:60%;animation-duration:30s;animation-delay:-12s}
+#fx{position:fixed;inset:0;z-index:-1;pointer-events:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(8vw,-6vh) scale(1.15)}}
+@keyframes rise{from{opacity:0;transform:translateY(26px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes shimmer{to{background-position:300% center}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.35)}70%{box-shadow:0 0 0 18px rgba(255,255,255,0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.glass{background:rgba(12,14,22,.55);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.brand-name{font-size:30px;font-weight:700;letter-spacing:.5px;background:linear-gradient(90deg,#fff,var(--accent2),#fff,var(--accent2));background-size:300% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 7s linear infinite}
+
+/* ===== Login ===== */
+.login-wrap{min-height:100vh;display:grid;place-items:center;padding:20px}
+.login{width:100%;max-width:400px;padding:34px 30px;text-align:center;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.avatar{width:96px;height:96px;margin:0 auto 14px;border-radius:50%;border:2px solid var(--line);background:linear-gradient(135deg,var(--accent),var(--accent2)) center/cover no-repeat;color:#05060a;display:grid;place-items:center;font-weight:700;font-size:26px;box-shadow:0 0 30px rgba(255,255,255,.15)}
+.tagline{color:var(--mut);font-size:13px;letter-spacing:.4px;margin:8px 0 26px}
+.cta{display:block;width:100%;padding:16px;border-radius:14px;border:0;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#05060a;font:inherit;font-size:17px;font-weight:700;text-decoration:none;cursor:pointer;animation:pulse 2.4s infinite;transition:transform .2s}
+.cta:hover{transform:translateY(-2px) scale(1.01)}
+.alt{margin-top:18px;background:none;border:0;color:var(--mut);font:inherit;font-size:13px;cursor:pointer;text-decoration:underline}
+.lform{display:grid;gap:10px;margin-top:18px;animation:fadeIn .5s both}
+.lform input{background:rgba(0,0,0,.35);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:13px;font:inherit}
+.lform button{padding:13px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.08);color:var(--text);font:inherit;font-weight:700;cursor:pointer}
+
+/* ===== Shell ===== */
+.shell{display:grid;grid-template-columns:240px 1fr;gap:16px;padding:16px;min-height:100vh}
+.side{padding:18px;display:flex;flex-direction:column;gap:6px;height:fit-content;position:sticky;top:16px}
+.side .brand-name{font-size:22px;margin-bottom:2px;animation:none;background:none;-webkit-text-fill-color:var(--text);color:var(--text)}
+.side small{color:var(--mut);font-size:12px;margin-bottom:14px}
+.nav{background:transparent;border:0;color:var(--text);text-align:left;padding:11px 13px;border-radius:10px;font:inherit;font-size:15px;cursor:pointer;transition:background .2s}
+.nav:hover{background:rgba(255,255,255,.07)}
+.nav.on{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#05060a;font-weight:700}
+.out{margin-top:auto;color:var(--mut)}
+.main{padding:24px;min-width:0;animation:fadeIn .4s both}
+h1{margin:0 0 18px;font-size:28px}
+h3{margin:0 0 10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}
+.tw{overflow-x:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.grid .card{margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:16px}
+.stat{background:rgba(0,0,0,.3);border:1px solid var(--line);border-radius:14px;padding:14px}
+.stat span{display:block;color:var(--mut);font-size:13px}
+.stat b{font-size:24px}
+input,select,textarea{background:rgba(0,0,0,.35);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px;font:inherit;min-width:0;flex:1}
+textarea{width:100%;min-height:110px;margin:8px 0;box-sizing:border-box}
+select option{color:#000}
+button{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#05060a;border:0;border-radius:10px;padding:10px 14px;font:inherit;font-weight:700;cursor:pointer}
+button:disabled{opacity:.35;cursor:not-allowed}
+button.x{background:rgba(255,255,255,.1);color:var(--text)}
+button.danger{background:#3a1116;color:#ff8a94}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px}
+tr.click{cursor:pointer;transition:background .2s}
+tr.click:hover{background:rgba(255,255,255,.06)}
+.acts button{margin:2px}
+.plan{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 0;border-top:1px solid rgba(255,255,255,.08)}
+.plan small{display:block;color:var(--mut)}
+.ph{height:140px;border-radius:12px;background:rgba(0,0,0,.3) center/cover no-repeat;margin-bottom:10px}
+.hero{height:210px;border-radius:18px;background:#fff;color:#111;display:grid;place-items:center;margin-bottom:18px;overflow:hidden;font-weight:500}
+.hero img{width:100%;height:100%;object-fit:cover}
+.badge{display:inline-block;padding:3px 10px;border-radius:99px;border:1px solid var(--line);font-size:12px;font-weight:700;letter-spacing:.3px}
+.bar{height:8px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden;margin-top:8px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:99px;transition:width .8s}
+.mut{color:var(--mut)}
+.wide{width:100%;margin-top:8px}
+.key{border-color:var(--accent)}
+code{display:block;word-break:break-all;background:#000;padding:10px;border-radius:10px;margin-top:6px;color:var(--accent)}
+.detail{animation:rise .5s cubic-bezier(.2,.8,.2,1) both;border-color:var(--accent2)}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:#000;border:1px solid var(--accent2);padding:12px 18px;border-radius:12px;transition:.35s;z-index:9}
+#toast.on{transform:translateX(-50%) translateY(0)}
+@media(max-width:760px){.shell{grid-template-columns:1fr}.side{position:static;flex-direction:row;overflow-x:auto;align-items:center}.side .brand-name,.side small{display:none}.nav{white-space:nowrap}.out{margin:0}}
+</style>
+</head>
+<body>
+<div id="bg"></div>
+<div class="aurora"></div>
+<div class="orbs"><i></i><i></i><i></i></div>
+<canvas id="fx"></canvas>
+<div id="app"></div>
+<div id="toast"></div>
+<script>
+/* ===== EDIT HERE: brand and contact ===== */
+const CONFIG={
+  brand:'ShadowXcheatZz',
+  tagline:'Premium key reselling dashboard',
+  whatsappNumber:'10000000000',   // country code + number, no + or spaces
+  whatsappMessage:'Hi, I want login access to ShadowXcheatZz reseller portal.',
+  heroPhoto:''                    // image URL or data URL; empty shows the white placeholder
+};
+
+const KEY='shadowxcheatz_v4';
+const DAY=864e5;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>Math.random().toString(36).slice(2,9);
+const money=n=>'$'+(Number(n)||0).toFixed(2);
+function load(){try{return JSON.parse(localStorage.getItem(KEY))}catch(e){return null}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){toast('Storage full. Use smaller photos.')}}
+const DEFAULT_RANKS=[
+  {name:'Bronze',min:0,disc:0},
+  {name:'Silver',min:500,disc:5},
+  {name:'Gold',min:1500,disc:10},
+  {name:'Platinum',min:4000,disc:15},
+  {name:'Diamond',min:10000,disc:20}
+];
+let db=load()||{bg:'',profile:'',ranks:DEFAULT_RANKS,users:[{id:'admin1',role:'admin',u:'admin',p:'admin123'}],products:[],coupons:[],sales:[]};
+let me=null,view='dash',selRes=null,lastKey=null,loginOpen=false,toastT;
+
+const waLink=()=>`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(CONFIG.whatsappMessage)}`;
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('on'),2200)}
+function stat(l,v){return `<div class="stat"><span>${l}</span><b>${v}</b></div>`}
+function photo(src){return `<div class="ph" ${src?`style="background-image:url('${src}')"`:''}></div>`}
+function readImg(file,max){return new Promise(res=>{if(!file)return res('');const r=new FileReader();r.onload=()=>{const img=new Image();img.onload=()=>{const s=Math.min(1,max/Math.max(img.width,img.height));const c=document.createElement('canvas');c.width=img.width*s;c.height=img.height*s;c.getContext('2d').drawImage(img,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',.8))};img.onerror=()=>res('');img.src=r.result};r.readAsDataURL(file)})}
+function setBg(){$('#bg').style.backgroundImage=db.bg?`url('${db.bg}')`:'none'}
+
+/* ----- ranks & money ----- */
+const sortedRanks=()=>[...db.ranks].sort((a,b)=>a.min-b.min);
+const totalTop=r=>r.totalTop||0;
+function rankOf(r){let cur=sortedRanks()[0];sortedRanks().forEach(k=>{if(totalTop(r)>=k.min)cur=k});return cur}
+function nextRankOf(r){return sortedRanks().find(k=>k.min>totalTop(r))||null}
+function discOf(r){return r.customDisc!=null?r.customDisc:rankOf(r).disc}
+function isActive(r){return !r.banned&&r.expires&&r.expires>Date.now()}
+
+/* ----- auth ----- */
+function login(u,p){
+  const x=db.users.find(x=>x.u===u&&x.p===p);
+  if(!x)return toast('Wrong username or password');
+  if(x.role==='reseller'&&x.banned)return toast('This account is banned. Contact the owner.');
+  me=x;view=x.role==='admin'?'dash':'rdash';draw();
+}
+function go(v){view=v;draw()}
+
+const ADMIN=[['dash','Overview'],['products','Products'],['keys','Stock & keys'],['resellers','Resellers'],['ranks','Ranks'],['coupons','Discounts'],['sales','Sales'],['branding','Branding']];
+const RES=[['rdash','Shop'],['rsales','My purchases']];
+
+function avatarHTML(){return `<div class="avatar" ${db.profile?`style="background-image:url('${db.profile}')"`:''}>${db.profile?'':'SX'}</div>`}
+function loginHTML(){
+  return `<div class="login-wrap"><div class="login glass">
+    ${avatarHTML()}
+    <div class="brand-name">${CONFIG.brand}</div>
+    <div class="tagline">${CONFIG.tagline}</div>
+    <a class="cta" href="${waLink()}" target="_blank" rel="noopener">Get login access</a>
+    ${loginOpen
+      ?`<form class="lform" data-f="login"><input name="u" placeholder="Username" autocomplete="username" required><input name="p" type="password" placeholder="Password" autocomplete="current-password" required><button>Log in</button></form>`
+      :`<button class="alt" data-a="toggleLogin">Already have access? Log in</button>`}
+  </div></div>`;
+}
+
+function draw(){
+  setBg();
+  if(!me){$('#app').innerHTML=loginHTML();return}
+  const isA=me.role==='admin';
+  const views={dash:dashV,products:prodV,keys:keysV,resellers:resV,ranks:ranksV,coupons:coupV,sales:salesV,branding:brandV,rdash:shopV,rsales:mySalesV};
+  const items=isA?ADMIN:RES;
+  if(!items.some(([v])=>v===view))view=isA?'dash':'rdash';
+  $('#app').innerHTML=`<div class="shell"><aside class="glass side"><div class="brand-name">${CONFIG.brand}</div><small>${isA?'Admin panel':'Reseller portal'}</small>${items.map(([v,l])=>`<button class="nav ${view===v?'on':''}" data-a="go" data-v="${v}">${l}</button>`).join('')}<button class="nav out" data-a="logout">Log out</button></aside><main class="glass main">${views[view]()}</main></div>`;
+}
+
+/* ----- admin views ----- */
+function dashV(){
+  const rs=db.users.filter(u=>u.role==='reseller');
+  const stock=db.products.reduce((a,p)=>a+p.plans.reduce((b,pl)=>b+pl.keys.length,0),0);
+  const rev=db.sales.reduce((a,s)=>a+s.paid,0);
+  return `<h1>Overview</h1><div class="stats">${stat('Resellers',rs.length)}${stat('Products',db.products.length)}${stat('Keys in stock',stock)}${stat('Revenue',money(rev))}${stat('Sales',db.sales.length)}</div>`;
+}
+
+function prodV(){
+  return `<h1>Products</h1>
+<form class="card" data-f="addProduct"><h3>Add product</h3><div class="row"><input name="name" placeholder="Product name" required><input type="file" name="photo" accept="image/*"><button>Add product</button></div></form>
+<div class="grid">${db.products.map(p=>`<div class="card">${photo(p.photo)}<h3>${esc(p.name)}</h3>
+<div class="tw"><table><tr><th>Plan</th><th>Days</th><th>Price</th><th>Stock</th><th></th></tr>${p.plans.map(pl=>`<tr><td>${esc(pl.label)}</td><td>${pl.days}</td><td>${money(pl.price)}</td><td>${pl.keys.length}</td><td><button class="x" data-a="delPlan" data-p="${p.id}" data-id="${pl.id}">×</button></td></tr>`).join('')||'<tr><td colspan=5 class="mut">No plans yet</td></tr>'}</table></div>
+<form data-f="addPlan" data-p="${p.id}" class="row"><input name="label" placeholder="Plan e.g. 7 Days" required><input name="days" type="number" min="1" placeholder="Days" required><input name="price" type="number" step="0.01" min="0" placeholder="Price" required><button>Add plan</button></form>
+<button class="x wide" data-a="delProduct" data-id="${p.id}">Delete product</button></div>`).join('')||'<p class="mut">No products yet.</p>'}</div>`;
+}
+
+function keysV(){
+  const plans=db.products.flatMap(p=>p.plans.map(pl=>({p,pl})));
+  return `<h1>Stock & keys</h1>
+<form class="card" data-f="addKeys"><h3>Add keys</h3><select name="plan" required>${plans.map(({p,pl})=>`<option value="${pl.id}">${esc(p.name)} — ${esc(pl.label)}</option>`).join('')}</select><textarea name="keys" placeholder="One key per line" required></textarea><button>Add to stock</button></form>
+<div class="card tw"><table><tr><th>Product</th><th>Plan</th><th>Days</th><th>Stock</th></tr>${plans.map(({p,pl})=>`<tr><td>${esc(p.name)}</td><td>${esc(pl.label)}</td><td>${pl.days}</td><td>${pl.keys.length}</td></tr>`).join('')||'<tr><td colspan=4 class="mut">Add a product with a plan first</td></tr>'}</table></div>`;
+}
+
+function resV(){
+  const rs=db.users.filter(u=>u.role==='reseller');
+  const sel=selRes&&db.users.find(x=>x.id===selRes);
+  const status=r=>r.banned?'<span class="badge">Banned</span>':(r.expires&&r.expires>Date.now()?'Active':'Expired');
+  const detail=sel?`<div class="card detail">
+    <div class="row" style="justify-content:space-between"><div><h3>${esc(sel.u)} <span class="badge">${rankOf(sel).name}</span></h3><div class="mut">Total top-up ${money(totalTop(sel))} · Balance ${money(sel.balance)} · Discount ${discOf(sel)}%${sel.customDisc!=null?' (custom)':''}</div></div><button class="x" data-a="closeRes">Close</button></div>
+    <div class="row acts"><button data-a="addMoney" data-id="${sel.id}">Add money</button><button data-a="removeMoney" data-id="${sel.id}">Remove money</button><button data-a="setDisc" data-id="${sel.id}">Set discount</button><button data-a="addDays" data-id="${sel.id}">Add days</button><button class="x" data-a="toggleBan" data-id="${sel.id}">${sel.banned?'Unban':'Ban'}</button><button class="danger" data-a="delRes" data-id="${sel.id}">Remove reseller</button></div>
+  </div>`:'';
+  return `<h1>Resellers</h1>
+${detail}
+<form class="card" data-f="addRes"><h3>Add reseller</h3><div class="row"><input name="u" placeholder="Reseller username" required><input name="p" placeholder="Reseller password" required><button>Add reseller</button></div><p class="mut">New resellers start with 30 days of access. Rank is earned from total top-ups.</p></form>
+<div class="card tw"><table><tr><th>Username</th><th>Rank</th><th>Discount</th><th>Balance</th><th>Total top-up</th><th>Status</th></tr>${rs.map(r=>`<tr class="click" data-a="openRes" data-id="${r.id}"><td>${esc(r.u)}</td><td>${rankOf(r).name}</td><td>${discOf(r)}%</td><td>${money(r.balance)}</td><td>${money(totalTop(r))}</td><td>${status(r)}</td></tr>`).join('')||'<tr><td colspan=6 class="mut">No resellers yet</td></tr>'}</table></div>`;
+}
+
+function ranksV(){
+  const rk=sortedRanks();
+  return `<h1>Ranks</h1><p class="mut">A reseller's rank is based on lifetime top-ups. The discount applies to every purchase unless you set a custom discount on that reseller.</p>
+<form class="card" data-f="saveRanks"><div class="tw"><table><tr><th>Rank</th><th>Min total top-up ($)</th><th>Discount %</th></tr>${rk.map((k,i)=>`<tr><td><input name="n${i}" value="${esc(k.name)}" required></td><td><input name="m${i}" type="number" min="0" step="1" value="${k.min}" required></td><td><input name="d${i}" type="number" min="0" max="100" step="0.5" value="${k.disc}" required></td></tr>`).join('')}</table></div><div class="row"><button>Save ranks</button></div></form>`;
+}
+
+function coupV(){
+  return `<h1>Discounts & coupons</h1>
+<div class="card"><h3>Rank discounts</h3><p class="mut">Rank discounts are set on the Ranks tab. Custom per-reseller discounts are set from the Resellers tab.</p></div>
+<form class="card" data-f="addCoupon"><h3>Add coupon</h3><div class="row"><input name="code" placeholder="Code e.g. SAVE10" required><select name="type"><option value="percent">% off</option><option value="fixed">$ off</option></select><input name="value" type="number" step="0.01" min="0" placeholder="Value" required><button>Add coupon</button></div></form>
+<div class="card tw"><table><tr><th>Code</th><th>Type</th><th>Value</th><th>Status</th><th></th></tr>${db.coupons.map(c=>`<tr><td>${esc(c.code)}</td><td>${c.type==='percent'?'%':'$'}</td><td>${c.value}</td><td>${c.active?'Active':'Off'}</td><td class="acts"><button data-a="toggleCoupon" data-id="${c.id}">Toggle</button><button class="x" data-a="delCoupon" data-id="${c.id}">Delete</button></td></tr>`).join('')||'<tr><td colspan=5 class="mut">No coupons yet</td></tr>'}</table></div>`;
+}
+
+function salesV(){
+  return `<h1>Sales</h1><div class="card tw"><table><tr><th>Date</th><th>Reseller</th><th>Product</th><th>Plan</th><th>Paid</th><th>Key</th></tr>${db.sales.map(s=>`<tr><td>${new Date(s.date).toLocaleDateString()}</td><td>${esc(s.name)}</td><td>${esc(s.product)}</td><td>${esc(s.plan)}</td><td>${money(s.paid)}</td><td><code>${esc(s.key)}</code></td></tr>`).join('')||'<tr><td colspan=6 class="mut">No sales yet</td></tr>'}</table></div>`;
+}
+
+function brandV(){
+  return `<h1>Branding</h1>
+<div class="card"><h3>Your profile picture</h3><p class="mut">Shown at the top of the login box.</p><div class="row"><input type="file" id="profilefile" accept="image/*"><button class="x" data-a="clearProfile">Remove</button></div></div>
+<div class="card"><h3>Background photo</h3><p class="mut">Optional. Sits behind the animated background.</p><div class="row"><input type="file" id="bgfile" accept="image/*"><button class="x" data-a="clearBg">Remove</button></div></div>`;
+}
+
+/* ----- reseller views ----- */
+function shopV(){
+  const active=isActive(me);
+  const rk=rankOf(me),nx=nextRankOf(me);
+  const pct=nx?Math.min(100,(totalTop(me)-rk.min)/(nx.min-rk.min)*100):100;
+  const d=discOf(me);
+  const hero=CONFIG.heroPhoto?`<img src="${esc(CONFIG.heroPhoto)}" alt="">`:'<span>Your photo here</span>';
+  return `<div class="hero">${hero}</div>
+<h1>Shop</h1>
+<div class="stats">${stat('Balance',money(me.balance))}${stat('Rank',rk.name)}${stat('Your discount',d+'%')}${stat('Access',active?'Until '+new Date(me.expires).toLocaleDateString():'Expired')}</div>
+<div class="card"><div class="mut">${nx?`Top up ${money(nx.min-totalTop(me))} more to reach ${nx.name}`:'Top rank reached'}</div><div class="bar"><i style="width:${pct}%"></i></div></div>
+${active?'':'<div class="card mut">Your access is paused or expired. Contact the owner.</div>'}
+<div class="row"><input id="cp" placeholder="Coupon code (optional)"></div>
+${lastKey?`<div class="card key"><b>${esc(lastKey.product)} — ${esc(lastKey.plan)}</b><code>${esc(lastKey.key)}</code></div>`:''}
+<div class="grid">${db.products.map(p=>`<div class="card">${photo(p.photo)}<h3>${esc(p.name)}</h3>${p.plans.map(pl=>{const price=(pl.price*(1-d/100)).toFixed(2);return `<div class="plan"><div><b>${esc(pl.label)}</b><small>${pl.days} days · stock ${pl.keys.length}</small></div><button data-a="buy" data-id="${pl.id}" data-p="${p.id}" ${pl.keys.length&&active?'':'disabled'}>$${price}</button></div>`}).join('')||'<p class="mut">No plans yet</p>'}</div>`).join('')||'<p class="mut">No products yet.</p>'}</div>`;
+}
+
+function mySalesV(){
+  const mine=db.sales.filter(s=>s.u===me.u);
+  return `<h1>My purchases</h1><div class="card tw"><table><tr><th>Date</th><th>Product</th><th>Plan</th><th>Paid</th><th>Key</th></tr>${mine.map(s=>`<tr><td>${new Date(s.date).toLocaleDateString()}</td><td>${esc(s.product)}</td><td>${esc(s.plan)}</td><td>${money(s.paid)}</td><td><code>${esc(s.key)}</code></td></tr>`).join('')||'<tr><td colspan=5 class="mut">No purchases yet</td></tr>'}</table></div>`;
+}
+
+function buy(pid,plid){
+  const r=me;
+  if(!isActive(r))return toast('Your access is paused or expired. Contact the owner.');
+  const p=db.products.find(x=>x.id===pid);
+  const pl=p&&p.plans.find(x=>x.id===plid);
+  if(!pl||!pl.keys.length)return toast('Out of stock');
+  let price=pl.price*(1-discOf(r)/100);
+  const code=(($('#cp')||{}).value||'').trim().toUpperCase();
+  if(code){
+    const c=db.coupons.find(c=>c.active&&c.code===code);
+    if(!c)return toast('Invalid coupon');
+    price=c.type==='percent'?price*(1-c.value/100):price-c.value;
+  }
+  price=Math.max(0,Math.round(price*100)/100);
+  if(r.balance<price)return toast(`Not enough balance. You need ${money(price)}`);
+  const key=pl.keys.shift();
+  r.balance=Math.round((r.balance-price)*100)/100;
+  db.sales.unshift({id:uid(),u:r.u,name:r.u,product:p.name,plan:pl.label,paid:price,key,date:Date.now()});
+  lastKey={product:p.name,plan:pl.label,key};
+  save();draw();toast('Key delivered');
+}
+
+/* ----- clicks ----- */
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-a]');
+  if(!b)return;
+  const a=b.dataset.a,id=b.dataset.id,pid=b.dataset.p;
+  const R=()=>db.users.find(x=>x.id===id);
+  switch(a){
+    case'toggleLogin':loginOpen=true;return draw();
+    case'go':selRes=null;return go(b.dataset.v);
+    case'logout':me=null;lastKey=null;loginOpen=false;selRes=null;return draw();
+    case'buy':return buy(pid,id);
+    case'openRes':selRes=id;return draw();
+    case'closeRes':selRes=null;return draw();
+    case'addMoney':{const r=R(),n=parseFloat(prompt(`Add money to ${r.u} ($)`));if(r&&n>0){r.balance=Math.round((r.balance+n)*100)/100;r.totalTop=totalTop(r)+n;toast(`Added ${money(n)}`)}break}
+    case'removeMoney':{const r=R(),n=parseFloat(prompt(`Remove money from ${r.u} ($)`));if(r&&n>0){r.balance=Math.max(0,Math.round((r.balance-n)*100)/100);toast(`Removed ${money(n)}`)}break}
+    case'setDisc':{const r=R(),v=prompt(`Custom discount % for ${r.u}. Leave empty to use rank discount.`,r.customDisc??'');if(r&&v!==null){if(v.trim()===''){r.customDisc=null}else{const n=parseFloat(v);if(n>=0&&n<=100)r.customDisc=n}}break}
+    case'addDays':{const r=R(),n=parseInt(prompt('Days to add'));if(r&&n>0)r.expires=Math.max(Date.now(),r.expires||0)+n*DAY;break}
+    case'toggleBan':{const r=R();if(r&&confirm(r.banned?'Unban this reseller?':'Ban this reseller? They cannot log in or buy.'))r.banned=!r.banned;break}
+    case'delRes':{const r=R();if(r&&confirm(`Remove ${r.u} permanently?`)){db.users=db.users.filter(x=>x.id!==id);selRes=null}break}
+    case'delProduct':if(confirm('Delete this product and all its plans?'))db.products=db.products.filter(p=>p.id!==id);break;
+    case'delPlan':{const p=db.products.find(x=>x.id===pid);if(p)p.plans=p.plans.filter(x=>x.id!==id);break}
+    case'delCoupon':db.coupons=db.coupons.filter(c=>c.id!==id);break;
+    case'toggleCoupon':{const c=db.coupons.find(x=>x.id===id);if(c)c.active=!c.active;break}
+    case'clearBg':db.bg='';break;
+    case'clearProfile':db.profile='';break;
+  }
+  save();draw();
+});
+
+document.addEventListener('change',async e=>{
+  if(e.target.id==='bgfile'){db.bg=await readImg(e.target.files[0],1600);save();draw()}
+  if(e.target.id==='profilefile'){db.profile=await readImg(e.target.files[0],400);save();draw()}
+});
+
+/* ----- forms ----- */
+document.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const f=e.target,k=f.dataset.f,d=Object.fromEntries(new FormData(f));
+  switch(k){
+    case'login':return login(d.u.trim(),d.p);
+    case'addProduct':{const img=await readImg(f.photo.files[0],400);db.products.push({id:uid(),name:d.name.trim(),photo:img,plans:[]});break}
+    case'addPlan':{const p=db.products.find(x=>x.id===f.dataset.p);if(p)p.plans.push({id:uid(),label:d.label.trim(),days:+d.days,price:+d.price,keys:[]});break}
+    case'addKeys':{
+      const pl=db.products.flatMap(p=>p.plans).find(x=>x.id===d.plan);
+      const list=d.keys.split('\n').map(s=>s.trim()).filter(Boolean);
+      if(pl){pl.keys.push(...list);toast(`Added ${list.length} keys`)}
+      break;
+    }
+    case'addRes':{
+      const u=d.u.trim();
+      if(db.users.some(x=>x.u===u))return toast('Username already taken');
+      db.users.push({id:uid(),role:'reseller',u,p:d.p,balance:0,totalTop:0,customDisc:null,banned:false,expires:Date.now()+30*DAY});
+      break;
+    }
+    case'saveRanks':{
+      const rows=[];
+      for(let i=0;i<5;i++)rows.push({name:d['n'+i].trim()||('Rank '+(i+1)),min:+d['m'+i]||0,disc:+d['d'+i]||0});
+      db.ranks=rows.sort((a,b)=>a.min-b.min);
+      toast('Ranks saved');
+      break;
+    }
+    case'addCoupon':{
+      const code=d.code.trim().toUpperCase();
+      if(db.coupons.some(c=>c.code===code))return toast('Code already exists');
+      db.coupons.push({id:uid(),code,type:d.type,value:+d.value,active:true});
+      break;
+    }
+  }
+  save();draw();
+});
+
+/* ----- animated background: linked particle field ----- */
+const fx=$('#fx'),cx=fx.getContext('2d');
+let W=0,H=0,pts=[];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function sizeFx(){
+  W=fx.width=innerWidth;H=fx.height=innerHeight;
+  const n=Math.min(85,Math.floor(W*H/17000));
+  pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35}));
+}
+function frame(){
+  const c=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()||'#fff';
+  cx.clearRect(0,0,W,H);
+  pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1});
+  cx.strokeStyle=c;cx.lineWidth=1;
+  for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+    const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+    if(d<140){cx.globalAlpha=(1-d/140)*.3;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke()}
+  }
+  cx.globalAlpha=.6;cx.fillStyle=c;
+  pts.forEach(p=>{cx.beginPath();cx.arc(p.x,p.y,1.6,0,7);cx.fill()});
+  cx.globalAlpha=1;
+  if(!reduce)requestAnimationFrame(frame);
+}
+addEventListener('resize',()=>{sizeFx();if(reduce)frame()});
+sizeFx();frame();
+
+draw();
+</script>
+</body>
+</html>
